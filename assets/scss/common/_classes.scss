@@ -3,7 +3,7 @@
 
 .btn {
   
-  height: 60px;
+  
   border-width: 2px;
   border-style: solid;
 
@@ -24,12 +24,13 @@
     background-color: rgba($color-light, 0.1);
     border-color: $color-light;
     width: 250px;
-    
+    height: 60px;
   }
   &--primary {
     background-color: rgba($color-primary, 0.8);
     border-color: $color-primary;
     width: 350px;
+    height: 60px;
   }
 }
 
