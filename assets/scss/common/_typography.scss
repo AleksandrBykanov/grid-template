@@ -12,6 +12,12 @@ html {
   font-family: $font-main;
   font-size: $font-size;
 }
+
+body {
+  color: $color-gray;
+  background-color: $color-light;
+}
+
 h1 {
   letter-spacing: 0.08em;
 
@@ -31,6 +37,28 @@ h1 {
 }
 h2 {
   font-family: $font-header;
+  margin-bottom: 3rem;
+  letter-spacing: 0.1em;
+  color: $color-primary;
+  line-height: 1.2em;
+
+  @include lg-min {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+  }
+  @include lg-md {
+    font-size: 2rem;
+    margin-bottom: 2.625rem;
+  }
+  @include md-sm {
+    font-size: 1.5rem;
+    margin-bottom: 2.25rem;
+  }
+  @include sm {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 2.25rem;
+  }
 }
 a {
   text-decoration: none;
