@@ -5,25 +5,20 @@
 *::after {
   box-sizing: border-box;
 }
-
 html {
   overflow-y: scroll;
   font-family: $font-main;
   font-size: $font-size;
 }
-
 body {
   color: $color-gray;
   background-color: $color-light;
 }
-
 h1 {
   letter-spacing: 0.08em;
-
   font-family: $font-header;
   font-weight: 300;
   line-height: 1.2em;
-
   @include lg-min {
     font-size: 3.75rem;
   }
@@ -40,7 +35,6 @@ h2 {
   letter-spacing: 0.1em;
   color: $color-primary;
   line-height: 1.2em;
-
   @include lg-min {
     font-size: 2.5rem;
     margin-bottom: 3rem;
@@ -62,4 +56,7 @@ h2 {
 a {
   text-decoration: none;
   color: $color-light;
+}
+p {
+  color: $color-gray;
 }
