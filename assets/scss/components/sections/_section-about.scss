@@ -5,7 +5,6 @@
   letter-spacing: 0.055em;
   background-color: $color-gray-light;
   @extend %section;
-
   &__container {
     max-width: $ul;
     margin: auto;
@@ -31,23 +30,20 @@
     }
     @extend %container;
   }
-
   &__content {
     p {
       @include lg-min {
         font-size: 1.125rem;
       }
-
       &:first-of-type {
         position: relative;
         margin-top: -5px;
-
         &::after {
-          position: absolute;
-          top: 0;
           width: 2px;
           height: 200px;
-          background-color: rgba($color-gray, 0.1);
+          background-color: rgba($color-gray, 0.11);
+          position: absolute;
+          top: 0;
           content: "";
           @include lg-min {
             right: -$gap * 2.5;
@@ -63,13 +59,18 @@
           }
         }
       }
-
       &:last-of-type {
         margin: 0;
       }
     }
   }
-
   &__image {
+    display: grid;
+    justify-items: center;
+    align-content: center;
+    img {
+      max-width: 100%;
+      max-height: 480px;
+    }
   }
 }
