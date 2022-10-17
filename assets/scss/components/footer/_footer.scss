@@ -1,0 +1,31 @@
+@use "../../presets" as *;
+@use "../../mixins" as *;
+
+.footer {
+  background-color: $color-primary;
+  text-align: center;
+  padding: ($gap * 2.5) ($gap) ($gap * 3.5);
+
+  &__container {
+    @extend %container;
+  }
+  &__social {
+    display: grid;
+    justify-content: center;
+    margin-bottom: $gap-x2;
+    position: relative;
+    grid-template-columns: repeat(auto-fit, minmax(($gap * 2.5), max-content));
+    &::after {
+      position: absolute;
+      bottom: -$gap;
+      left: calc(50% - 37.5px);
+      width: 75px;
+      height: 2px;
+      content: "";
+      background-color: rgba($color-light, 0.1);
+    }
+  }
+}
+
+.footer_copy {
+}
