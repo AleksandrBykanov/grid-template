@@ -15,7 +15,7 @@
     margin-bottom: $gap-x2;
     position: relative;
     grid-template-columns: repeat(auto-fit, minmax(($gap * 2.5), max-content));
-    &::after {
+    &:after {
       position: absolute;
       bottom: -$gap;
       left: calc(50% - 37.5px);
@@ -24,8 +24,28 @@
       content: "";
       background-color: rgba($color-light, 0.1);
     }
+    a {
+      display: block;
+      padding: $gap-sm;
+      transition: color 0.5s;
+      &:hover {
+        color: $color-accent;
+      }
+    }
   }
 }
-
+.fab {
+  font-size: 36px;
+}
 .footer_copy {
+  span:nth-of-type(1) {
+    margin-right: -0.5em;
+    letter-spacing: 0.33em;
+    font-weight: 100;
+  }
+  span:nth-of-type(2) {
+    letter-spacing: 0.05em;
+    color: $color-gray-light;
+    font-weight: 700;
+  }
 }
