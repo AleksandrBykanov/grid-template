@@ -1,0 +1,98 @@
+@use "../../presets" as *;
+@use "../../mixins" as *;
+
+.posts {
+  @extend %section;
+  &__container {
+    @extend %container;
+  }
+  &__grid {
+    display: grid;
+    padding-bottom: $gap;
+    gap: $gap;
+    @include lg-min {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-areas: "a1 a1 a2 a3" "a4 a5 a6 a6";
+    }
+    @include lg-md {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-areas: "a1 a1 a2" "a3 a4 a4" "a5 a5 a6";
+    }
+    @include md-sm {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: "a1 a2" "a3 a4" "a5 a6";
+    }
+    @include sm {
+      grid-template-columns: 1fr;
+      grid-template-areas: "a1" "a2" "a3" "a4" "a5" "a6";
+    }
+  }
+}
+.posts__action {
+  @extend %btn-container;
+}
+.post-item {
+  background-color: rgba($color-gray, 0.1);
+  transition: background-color 0.5s;
+  &:hover {
+    background-color: rgba($color-gray-dark, 0.2);
+    .post-item__image img {
+      transform: scale(1.1);
+    }
+    h3 {
+      color: $color-primary;
+    }
+    p {
+      color: $color-primary;
+    }
+  }
+  &__link {
+    display: grid;
+    height: 100%;
+    grid-template-rows: 300px 1fr;
+    overflow: hidden;
+  }
+  &__image {
+    display: flex;
+    justify-content: center;
+    background-color: $color-primary;
+    overflow: hidden;
+    img {
+      width: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+  }
+  &__caption {
+    display: grid;
+    align-content: center;
+    padding: $gap;
+    h3 {
+      font-family: $font-header;
+      text-align: center;
+      transition: color 0.5s;
+    }
+    p {
+      text-align: center;
+      transition: color 0.5s;
+    }
+  }
+  &:nth-of-type(1) {
+    grid-area: a1;
+  }
+  &:nth-of-type(2) {
+    grid-area: a2;
+  }
+  &:nth-of-type(3) {
+    grid-area: a3;
+  }
+  &:nth-of-type(4) {
+    grid-area: a4;
+  }
+  &:nth-of-type(5) {
+    grid-area: a5;
+  }
+  &:nth-of-type(6) {
+    grid-area: a6;
+  }
+}
